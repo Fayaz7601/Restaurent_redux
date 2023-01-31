@@ -1,0 +1,78 @@
+api call inn js
+...............
+
+AJAX  
+
+  -XMLhttp
+  -fetch
+  -asynch  await
+
+
+useEffect is used instead of ngoninit
+
+
+REDIRECTION IN REACT
+....................
+
+react-router-dom
+to install : npm i react-router-dom
+
+import {
+   BrowserRouter as Router, -------------all componnets tht needs routing
+Routes,--------------to set path for each component
+Route-------------------ued when there are more thaan 1 path
+ } from 'react-router-dom';
+
+
+ useParams --------hook used to access params from component
+
+
+
+
+ REDUX
+ .....
+
+coupling -many connection b/w parent and child component
+ 
+ props drilling--- in coupling ,if any intermediate component have any errors all other childs will not work
+  to avoid propd drilling we need to reduce coupling and make all the component independant
+
+  for this react introudced a new tech -state management tech-REDUX
+
+
+REDUX PROCSS
+............
+
+create a new js fle to keep the states ,all the components can acess the js file
+
+the components only can access the data from the js file,but cant update datas in js file
+
+    action -- a file with all the logicsto update the state
+    dipatch-- a method to used to fetch the logic in action file when the component need updation
+    reducer--- update datas in js file according to the payload responce get action file
+
+
+LIBRARIES REQUIRED TO USE REDUX
+...............................
+
+1.REDUX
+2.REACT REDUX
+3.REDUX-THUNK
+
+         TO INSTALL => npm i redux react-redux redux-thunk
+
+
+createstore()- method used to create store in js file
+              2 args
+              1-reducer
+              2-middleware  (used to make synchronous reddux into asynchronous)
+
+
+  applyMidlleware() - method in REDUX to apply middleware
+  combinereducers() - method in REDUX used to combine all the reducers in js file
+  thunk  -used to create middleware
+
+
+1.create store
+2.apply the store in index.js   
+     -provider  --its a tag used to pass the store (react-redux)
