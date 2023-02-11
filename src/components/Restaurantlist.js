@@ -4,29 +4,22 @@ import RestCard from './RestCard'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { RestaurantListAction } from '../action/restaurentAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Restaurantlist() {
 
   const [allrestaurent, setallrestaurent] = useState([])
 
-  // function to api call for datas inside json
-  const getrestaurentdata = async () => {
-    await fetch('/restaurants.json').then(data => {
-      data.json()
-        .then(result => {
-          // console.log(result);
-          setallrestaurent(result.restaurants)
-
-        })
-    })
-
-  }
-
-  console.log(allrestaurent);
+  const dispatch = useDispatch()
+  const result=useSelector(state=>state.restaurentReducer)
+  const{restaurantList}=result
 
   useEffect(() => {
-    getrestaurentdata()
+
+    dispatch(RestaurantListAction())
+    // getrestaurentdata()
   }, [])
   // [] is given to avoid rerunning of restaurentdata(continously) we only to load the one time when we ope the page
 
@@ -35,7 +28,7 @@ function Restaurantlist() {
     <Row>
       {
 
-        allrestaurent.map(item => (
+        restaurantList.map(item => (
           <RestCard data={item} />
         ))
 

@@ -69,10 +69,26 @@ createstore()- method used to create store in js file
 
 
   applyMidlleware() - method in REDUX to apply middleware
-  combinereducers() - method in REDUX used to combine all the reducers in js file
+  combineReducers() - method in REDUX used to combine all the reducers in js file
   thunk  -used to create middleware
 
 
 1.create store
 2.apply the store in index.js   
      -provider  --its a tag used to pass the store (react-redux)
+
+
+AXIOS  -- module used to make http methods(api call)
+              npm i axios
+
+
+useDispatch-hook used to dispatch actions in components -react-redux
+
+
+
+to access datas from store to component
+.......................................
+
+hook ----- useSelector
+
+          
